@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
     def update 
         @user = User.find(params[:user_id]) #identify user that we want
         @profile = @user.profile
-        if @profile.update_attributes(profile_params)
+        if @profile.update_attributes(profile_params) #Saves all changes to database
             flash[:success] = "Profile updated!"
             redirect_to user_path( params[:user_id])
         else
